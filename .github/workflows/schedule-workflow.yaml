@@ -1,0 +1,14 @@
+name: schedule workflow
+
+on:
+  schedule:
+    - cron: "45 * * * *"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test the schedule
+        run: echo "this is to chek the cron job"
+
+
