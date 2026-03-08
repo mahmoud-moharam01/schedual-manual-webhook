@@ -3,6 +3,7 @@ name: schedule workflow
 on:
   schedule:
     - cron: "57 * * * *"
+  workflow_dispatch: 
 
 jobs:
   deploy:
