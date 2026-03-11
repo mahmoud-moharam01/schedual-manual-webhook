@@ -7,7 +7,7 @@ on:
         description: "chose environment"
         required: true
         type: string
-        defaulte: "staging"
+        default: "staging"
 
 jobs:
   deploy_test:
@@ -15,5 +15,5 @@ jobs:
       ubuntu-latest
     steps:
       - name: check the manual workflow
-        run: echo "this case to check the manual workflow"
+        run: echo "this case to check the manual workflow ${{ inputs.environment }}"
 
