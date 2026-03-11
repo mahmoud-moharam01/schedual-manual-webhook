@@ -2,6 +2,12 @@ name: manual workflow test
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "chose environment"
+        required: true
+        type: string
+        defaulte: "staging"
 
 jobs:
   deploy_test:
