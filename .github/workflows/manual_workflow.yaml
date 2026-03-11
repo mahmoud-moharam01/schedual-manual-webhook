@@ -1,0 +1,13 @@
+name: manual workflow test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_test:
+    runs-on:
+      ubuntu-latest
+    steps:
+      - name: check the manual workflow
+        run: echo "this case to check the manual workflow"
+
