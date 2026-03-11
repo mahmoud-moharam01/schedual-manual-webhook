@@ -1,0 +1,34 @@
+name: seq and para jobs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: job-1 step1
+        run: echo "running job with name: ${{ github.job }}"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs:
+      - job1
+    steps:
+      - name: job-2 step1
+        run: echo "running job with name: ${{ github.job }}"
+
+  job3:
+    runs-on: ubuntu-latest
+    needs:
+      - job1
+    steps:
+      - name: job3 step_1
+        run: echo "running job with name: ${{ github.job }}"
+
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job2,job3]
+    steps:
+      - name: job4 step1
+        run: echo "running job with name: ${{ github.job }}"
