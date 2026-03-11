@@ -6,13 +6,16 @@ on:
       environment:
         description: "chose environment"
         required: true
-        type: string
+        type: choice
+        options:
+          - staging
+          - deployment
+          - production
         default: "staging"
 
 jobs:
   deploy_test:
-    runs-on:
-      ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: check the manual workflow
         run: echo "this case to check the manual workflow ${{ inputs.environment }}"
