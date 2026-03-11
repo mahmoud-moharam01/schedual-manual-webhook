@@ -1,0 +1,12 @@
+name: triger with API call
+
+on:
+  repository_dispatch:
+    types: [incident_report]
+
+job:
+  incident-handring:
+    runs-on: ubuntu-latest
+    stept:
+      - name: handle-the-incident
+        run: echo "incident was handeled"
