@@ -1,0 +1,18 @@
+name: run step on docker container
+on: 
+  workflow_dispatch:
+
+jobs:
+  working_on_docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: working normaly on the vm
+        run: echo "this step runs on the runner itself"
+
+      - name: working on a container into the runner
+        uses: docker://alpine:3.14
+        with:
+          entrypoint: /bin/sh
+          args: |
+            -c echo "this step run on a contains"
+  
