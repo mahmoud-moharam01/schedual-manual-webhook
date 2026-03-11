@@ -4,9 +4,9 @@ on:
   repository_dispatch:
     types: [incident_report]
 
-job:
+jobs:
   incident-handring:
     runs-on: ubuntu-latest
-    stept:
+    steps:
       - name: handle-the-incident
         run: echo "incident was handeled"
